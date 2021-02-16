@@ -1,4 +1,86 @@
-<div class="displayTable">
+<section id="landing" class="landing-section">
+  <div class="container">
+    <div class="row " style="padding-top: 15vh;">
+      <div class="col-md-8  mx-auto">
+        <div class="card login-card">
+          <h3 class="dark-color primary-font">Sign Up</h3>
+          <div class="card-body">          
+          <div class="form-group">
+            <label for="">Email</label>
+            <input type="text"
+              class="form-control" name="" id="" aria-describedby="helpId"  placeholder="Email" #userEmail required>
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="password"
+              class="form-control" name="" id="" aria-describedby="helpId"  placeholder="Password" #userPwd required>
+            <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+          </div>
+          <div class="formGroup">
+            <input type="button" class="btn btnLogin  dark-bg" value="Register" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+          </div>
+        </div>
+        <hr width="40%" style=" border:1px solid rgb(58, 58, 58)" class="mx-auto">
+          <div class="formGroup mx-auto">
+            <button type="button" class="btn  btn-default googleBtn" (click)="authService.GoogleAuth()">
+              <span style="width: 20px;height: 20px;">
+                <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                version="1.1"
+                id="svg18"
+                sodipodi:docname="google.svg"
+                inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+                  <g
+                      id="Symbols" 
+                      stroke="none"
+                      stroke-width="1"
+                      fill="none"
+                      fill-rule="evenodd"
+                      transform="matrix(0.49892229,0,0,0.49892229,3.410496,3.4027989)">
+                    <g
+                        id="UI/icons/color/google">
+                      <g
+                          id="Group"
+                          transform="translate(2,2)">
+                        <path
+                            d="m 32.436552,16.602401 c 0,-1.150804 -0.105185,-2.258273 -0.300831,-3.320342 h -15.58646 v 6.279554 h 8.906448 c -0.383578,2.029213 -1.54974,3.748197 -3.302138,4.899689 v 4.072871 h 5.348356 c 3.129634,-2.826453 4.934625,-6.988059 4.934625,-11.931772 z"
+                            id="Shape"
+                            fill="#4285f4" />
+                        <path
+                            d="m 16.549261,32.467407 c 4.468301,0 8.214325,-1.453467 10.952666,-3.933234 l -5.348356,-4.072871 c -1.48172,0.974022 -3.377873,1.549769 -5.60431,1.549769 -4.310521,0 -7.9583711,-2.855344 -9.2598723,-6.692964 H 1.7601121 v 4.206318 c 2.7229145,5.305532 8.3195099,8.942982 14.7891489,8.942982 z"
+                            id="path9"
+                            fill="#34a853" />
+                        <path
+                            d="M 7.2893887,19.318107 C 6.9584035,18.344085 6.7704712,17.303339 6.7704712,16.233703 c 0,-1.069635 0.1879323,-2.110381 0.5189175,-3.084403 V 8.9429822 H 1.7601121 C 0.63953078,11.134532 0,13.614299 0,16.233703 c 0,2.619405 0.63953078,5.099172 1.7601121,7.290722 z"
+                            id="path11"
+                            fill="#fbbc05" />
+                        <path
+                            d="m 16.549261,6.4563365 c 2.429797,0 4.611354,0.8192517 6.326587,2.427489 L 27.622541,4.2276416 C 24.755872,1.6089251 21.009848,0 16.549261,0 10.080324,0 4.4830266,3.638138 1.7601121,8.9429822 L 7.2893887,13.1493 C 8.5908899,9.3123677 12.239441,6.4563365 16.549261,6.4563365 Z"
+                            id="path13"
+                            fill="#ea4335" />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              Register with Google
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btm-shadow">
+  </div>
+</section>
+
+
+
+
+<!-- <div class="displayTable">
   <div class="displayTableCell">
 
     <div class="authBlock">
@@ -20,21 +102,12 @@
         <span class="or"><span class="orInner">Or</span></span>
       </div>
 
-      <!-- Continue with Google -->
       <div class="formGroup">
         <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
           <i class="fab fa-google-plus-g"></i>
           Continue with Google
         </button>
       </div>
-
-      <!-- Continue with Facebook -->
-      <!-- <div class="formGroup">
-        <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
-          <i class="fab fa-facebook"></i>
-          Continue with Facebook
-        </button>
-      </div> -->
     </div>
 
     <div class="redirectToLogin">
@@ -42,4 +115,4 @@
     </div>
   </div>
 
-</div>
+</div> -->

@@ -1,0 +1,40 @@
+.login-card {
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 8px;
+  padding: 36px 48px;
+  background: rgba(158, 158, 158, 0.329);
+  /* filter: blur(6px); */
+  margin-bottom: 30px;
+  color: white;
+  border-style: none;
+  box-shadow: 0px 5px 23px 4px rgba(29, 25, 48, 0.55);
+}
+
+.googleBtn {
+  background: white;
+  font-weight: 400;
+  border-radius: 5px;
+  height: 40px;
+  box-shadow: 0px 5px 23px 4px rgba(255, 255, 255, 0.55);
+  transition: 500ms all;
+}
+
+.googleBtn:hover {
+  transition: 500ms all;
+}
+
+.btnLogin {
+  /* background: white; */
+  font-weight: 400;
+  border-radius: 5px;
+  height: 40px;
+  transition: 500ms all;
+  color: white;
+  font-weight: 500;
+  width: 20%;
+}
+.btnLogin:hover {
+  transition: 500ms all;
+}

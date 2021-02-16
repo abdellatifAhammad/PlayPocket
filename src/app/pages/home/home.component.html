@@ -55,15 +55,17 @@
         <hr width="10%" style="background-color: white;" class="mx-auto">
         <!-- <app-videoplayer></app-videoplayer> -->
         <div>
-            <div class="custom-thumbnail" style="overflow: hidden;">
-                <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
-                <div>
-                   
+            <div class="" style="overflow: hidden;" *ngIf="!displayVideo">
+                <div class="play-btn" style="margin-top: 250px;position: absolute; z-index: 4;margin-left: 40%;background: tomato; width: 60px;height: 60px;text-align: center;justify-content: center;border-radius: 16px;" (click)="display()">
+                    <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:16px;">
+                        <path d="M18.9464 9.64631L3.23214 0.298066C1.95536 -0.461114 0 0.275605 0 2.15334V20.8453C0 22.5299 1.81696 23.5451 3.23214 22.7006L18.9464 13.3569C20.3482 12.5258 20.3527 10.4774 18.9464 9.64631Z" fill="white"/>
+                    </svg>
                 </div>
+                <img  src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
             </div>
-            <!-- <video controls="true" class="custom-player" >
+            <video *ngIf="displayVideo" controls="true" class="custom-player" >
                 <source src="assets/video/spring.mp4" type="video/mp4" />
-            </video> -->
+            </video>
         </div>
     </div>
 </section>
