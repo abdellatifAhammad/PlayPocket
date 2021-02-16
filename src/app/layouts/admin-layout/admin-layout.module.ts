@@ -16,7 +16,7 @@ const AdminLayoutRoutes: Routes = [
   declarations: [
     DashboardComponent,
     UserProfileComponent,
-    HomeComponent,
+    // HomeComponent,
   ],
   imports: [
     CommonModule,

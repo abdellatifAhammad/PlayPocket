@@ -18,7 +18,8 @@ const AuthLayoutRoutes: Routes = [
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,

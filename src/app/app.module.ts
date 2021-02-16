@@ -14,6 +14,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    VideoplayerComponent,
   ],
   imports: [
     BrowserModule,

@@ -60,10 +60,38 @@
 }
 
 .supported-text {
-  margin-top: 3%;
+  margin-top: 7%;
   font-weight: 900;
   text-align: center;
   font-size: 1.3em;
+}
+
+.supported-box {
+  width: 60px;
+  height: 60px;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.box-margin {
+  margin-top: 5%;
+}
+
+.custom-player {
+  width: 100%;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.custom-thumbnail {
+  /* background-image: url("https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg"); */
+  /* background-size: cover; */
+  /* background-position: center center; */
+  /* background-repeat: no-repeat; */
+  width: 100%;
+  height: 500px;
+  border-radius: 16px;
+  filter: blur(3px);
 }
 
 @keyframes scrol {
