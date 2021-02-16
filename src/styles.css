@@ -21,7 +21,7 @@ body {
 }
 
 .pink-color {
-  color: #fe2844;
+  color: #fe2844 !important;
 }
 
 .dark-bg {
@@ -29,7 +29,7 @@ body {
 }
 
 .half-dark-bg {
-  background: #1f2032;
+  background: #1f2032 !important;
 }
 
 .light-bg {
@@ -82,4 +82,8 @@ body {
 
 .pink-glow {
   box-shadow: 0px 5px 23px 4px rgba(255, 60, 85, 0.55);
+}
+
+.dark-glow {
+  box-shadow: 0px 5px 23px 4px rgba(31, 33, 50, 0.63);
 }

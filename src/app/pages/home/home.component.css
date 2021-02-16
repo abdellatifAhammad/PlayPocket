@@ -12,11 +12,65 @@
   margin-top: 25px;
   border-radius: 40px !important;
   transition: 500ms all;
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: calc(57px / 2);
 }
 
 .btn-get-started:hover {
   transform: translateY(-6px);
   transition: 500ms all;
+}
+
+.btn-get-login {
+  font-weight: 400;
+  margin-left: 5%;
+  height: 50px;
+  width: 30%;
+  margin-top: 25px;
+  border-radius: 40px !important;
+  transition: 500ms all;
+  font-size: 1em;
+  line-height: calc(57px / 2);
+}
+
+.btn-get-login:hover {
+  transform: translateY(-6px);
+  transition: 500ms all;
+}
+
+.description-text {
+  padding-left: 6%;
+  margin-top: 25px;
+  font-size: 1.2em;
+  color: white;
+}
+.animate-scroll {
+  animation: scrol 1s infinite alternate linear;
+  transition: 1s all;
+}
+
+.movies-img {
+  height: 500px;
+  margin-left: 15%;
+}
+
+.presentation-text {
+  margin-top: 10%;
+  line-height: 45px;
+}
+
+.supported-text {
+  margin-top: 3%;
+  font-weight: 900;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+@keyframes scrol {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px) scale(0.6);
+  }
 }
