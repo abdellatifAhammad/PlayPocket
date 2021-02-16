@@ -1,0 +1,22 @@
+.landing-text {
+  padding-left: 5%;
+  margin-top: 20vh;
+  font-size: 2.4em;
+}
+
+.btn-get-started {
+  font-weight: 400;
+  margin-left: 5%;
+  height: 50px;
+  width: 35%;
+  margin-top: 25px;
+  border-radius: 40px !important;
+  transition: 500ms all;
+  font-size: 1.3em;
+  line-height: calc(57px / 2);
+}
+
+.btn-get-started:hover {
+  transform: translateY(-6px);
+  transition: 500ms all;
+}
