@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  public palette:any;
+  public displayVideo:boolean=false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  display(){
+    this.displayVideo=!this.displayVideo;
+  }
 }

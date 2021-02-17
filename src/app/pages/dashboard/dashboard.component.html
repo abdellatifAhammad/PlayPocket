@@ -1,1 +1,36 @@
-<p class="text-white">dashboard works!</p>
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<section  >
+  <div class="container" style="z-index: 3;">
+      <div style="position: absolute;top: 20px;">
+          <div class="container"  *ngIf="!displayVideo">
+              <div class="play-btn" style="margin-top: 190px;position: absolute; z-index: 4;margin-left: 40%;background: tomato; width: 60px;height: 60px;text-align: center;justify-content: center;border-radius: 16px;" (click)="display()">
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:16px;">
+                      <path d="M18.9464 9.64631L3.23214 0.298066C1.95536 -0.461114 0 0.275605 0 2.15334V20.8453C0 22.5299 1.81696 23.5451 3.23214 22.7006L18.9464 13.3569C20.3482 12.5258 20.3527 10.4774 18.9464 9.64631Z" fill="white"/>
+                  </svg>
+              </div>
+              <img  src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
+          </div>
+          <video *ngIf="displayVideo" controls="true" class="custom-player" >
+              <source src="assets/video/spring.mp4" type="video/mp4" />
+          </video>
+      </div>
+  </div>
+</section>
+<section id="saved-links" class="saved-links" style="margin-top: 300px;">
+  <div class="container">
+    <h4 class="pl-2">Your Saved links</h4>
+  </div>
+  <div class="container">
+  <div style="flex-wrap: wrap;" class="pl-4 mt-4 row">
+    <div class="col-md-3 mt-3" style="width: 100%;height: 300px;overflow: hidden;border-radius: 10px;">
+      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 300px;border-radius: 10px;overflow: hidden;" alt="">
+    </div>
+  </div>
+</div>
+</section>

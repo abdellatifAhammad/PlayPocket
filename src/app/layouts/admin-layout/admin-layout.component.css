@@ -1,0 +1,12 @@
+.main-content-elements {
+  /* margin-left: 15%; */
+  padding-left: 250px;
+}
+
+@media (max-width: 768px) {
+  .main-content-elements {
+    /* padding-right: 39px !important; */
+    /* padding-left: 39px !important; */
+    padding-left: 0px !important;
+  }
+}

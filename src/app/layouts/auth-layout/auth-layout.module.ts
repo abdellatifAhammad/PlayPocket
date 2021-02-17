@@ -24,7 +24,6 @@ const AuthLayoutRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(AuthLayoutRoutes),
-    
   ]
 })
 export class AuthLayoutModule { }

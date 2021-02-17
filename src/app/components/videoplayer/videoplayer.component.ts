@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./videoplayer.component.css']
 })
 export class VideoplayerComponent implements OnInit {
+  public palette:any;
+  public displayVideo:boolean=false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  display(){
+    this.displayVideo=!this.displayVideo;
   }
 
 }

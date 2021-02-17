@@ -12,13 +12,13 @@ import { VideoplayerComponent } from './videoplayer/videoplayer.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    VideoplayerComponent,
+    // VideoplayerComponent,
   ],
   exports:[
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    VideoplayerComponent,
+    // VideoplayerComponent,
   ],
   imports: [
     CommonModule
