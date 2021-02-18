@@ -8,29 +8,100 @@
 <section  >
   <div class="container" style="z-index: 3;">
       <div style="position: absolute;top: 20px;">
-          <div class="container"  *ngIf="!displayVideo">
+          <!-- <div class="container"  *ngIf="!displayVideo">
               <div class="play-btn" style="margin-top: 190px;position: absolute; z-index: 4;margin-left: 40%;background: tomato; width: 60px;height: 60px;text-align: center;justify-content: center;border-radius: 16px;" (click)="display()">
                   <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:16px;">
                       <path d="M18.9464 9.64631L3.23214 0.298066C1.95536 -0.461114 0 0.275605 0 2.15334V20.8453C0 22.5299 1.81696 23.5451 3.23214 22.7006L18.9464 13.3569C20.3482 12.5258 20.3527 10.4774 18.9464 9.64631Z" fill="white"/>
                   </svg>
               </div>
-              <img  src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
-          </div>
-          <video *ngIf="displayVideo" controls="true" class="custom-player" >
+             https://www.facebook.com/PajaroSantaLeone/videos/2837922789858627 
+               <img  src="https://graph.facebook.com/v9.0/2837922789858627/thumbnails" class="img-fluid custom-thumbnail" alt=""> 
+               <img  src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
+          </div> -->
+          <!-- <video *ngIf="displayVideo" controls="true" class="custom-player" >
               <source src="assets/video/spring.mp4" type="video/mp4" />
-          </video>
+          </video> -->
+          <div  class="video-container">
+            <!-- <iframe 
+              src="https://www.facebook.com/plugins/video.php?href=https://fb.watch/3K8NrOBBYx&show_text=0&height=400"
+               height="400"
+              class="video-facebook"
+              style="border:none ;border-radius: 10px;"
+              scrolling="no" frameborder="0" allowTransparency="false" allowFullScreen="true"
+            ></iframe> -->
+            <!-- <iframe [width]="innerWidth-300" style=" border-radius: 10px;" height="400"  src="https://www.youtube.com/embed/WhWc3b3KhnY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <iframe [width]="innerWidth-300" height="400" src="//ok.ru/videoembed/316232310349" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          </div> 
       </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          Add rows here
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="saved-links" class="saved-links" style="margin-top: 300px;">
   <div class="container">
-    <h4 class="pl-2">Your Saved links</h4>
+    <div class="row">
+      <h4 class="ml-4 text-white primary-font">Your Saved links</h4>
+      <div class="pl-2 ml-auto pr-4">
+        <button type="button"  class="btn btn-get-started text-white primary-font border-0 pink-glow radius  pink-bg" data-toggle="modal" data-target="#modelId" >
+          <span class="primary-font-semi-bold ">Add new Link </span>
+      </button>
+      </div>
+    </div>
   </div>
   <div class="container">
-  <div style="flex-wrap: wrap;" class="pl-4 mt-4 row">
-    <div class="col-md-3 mt-3" style="width: 100%;height: 300px;overflow: hidden;border-radius: 10px;">
-      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 300px;border-radius: 10px;overflow: hidden;" alt="">
+  <div style="flex-wrap: wrap;" class=" mt-4 row">
+    <div class="col-md-3 mt-3 " style="width: 80%;height: 150px;border-radius: 10px;position: relative;">
+      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;filter:brightness(0.5);" alt="">
+      <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
+        <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
+        <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 37, 72);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">Youtube</p></div>
+      </div>
+    </div>
+    <div class="col-md-3 mt-3 " style="width: 80%;height: 150px;border-radius: 10px;position: relative;">
+      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;filter:brightness(0.5);" alt="">
+      <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
+        <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
+        <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(37, 120, 245);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">Facebook</p></div>
+      </div>
+    </div>
+    <div class="col-md-3 mt-3 " style="width: 80%;height: 150px;border-radius: 10px;position: relative;">
+      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;filter:brightness(0.5);" alt="">
+      <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
+        <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
+        <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 179, 37);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">ok.ru</p></div>
+      </div>
     </div>
   </div>
 </div>
 </section>
+
+<script>
+  $('#exampleModal').on('show.bs.modal', event => {
+    var button = $(event.relatedTarget);
+    var modal = $(this);
+    // Use above variables to manipulate the DOM
+    
+  });
+</script>
