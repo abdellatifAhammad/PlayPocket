@@ -41,19 +41,52 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h5 class="modal-title">Add link to your links board</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
           </div>
       <div class="modal-body">
+        <div class="alert alert-danger  fade show pink-bg" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong class="text-white primary-font-semi-bold">You have to complete those inputs</strong> 
+        </div>
+        <script>
+          $(".alert").alert();
+        </script>
         <div class="container-fluid">
-          Add rows here
+          <div class="form-group">
+            <label for="" class="primary-font">Link title</label>
+            <input type="text" class="form-control" name="link-title" id="link-title" aria-describedby="helpId"  placeholder="give a title for your link" #linkTitle required>
+            
+          </div>
+          <div class="form-group">
+            <label class="primary-font" for="">Video Link</label>
+            <input type="text" class="form-control" name="link-title" id="link" aria-describedby="helpId"  placeholder="put your link" #link required>
+          </div>
+          <div class="form-group">
+            <label class="primary-font" for="">Video source type</label>
+              <select class="form-control" #linkType name="" id="">
+                <option value="youtube">Youtube</option>
+                <option value="ok">OK.ru</option>
+                <!-- <option value="local">Local file</option> -->
+              </select>
+          </div>
+          <div class="form-group">
+            <label class="primary-font" for="">Video thumbnail Image</label>
+            <input type="file" 
+            #linkPhoto
+            (change)="onFileSelected($event)"
+            name="image"
+            autocomplete="off" class="form-control custom-file-input" name="link-title" id="link" aria-describedby="helpId"  placeholder="pick your thumbnail Image" #link required>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 20px;">Close</button>
+        <button type="button" class="btn btn-primary pink-bg" style="border-radius: 20px;border-style: none;" (click)="createLink(linkTitle.value,link.value,linkType.value)">Add link</button>
       </div>
     </div>
   </div>
@@ -71,23 +104,23 @@
     </div>
   </div>
   <div class="container">
-  <div style="flex-wrap: wrap;" class=" mt-4 row">
-    <div class="col-md-3 mt-3 " style="width: 80%;height: 150px;border-radius: 10px;position: relative;">
-      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;filter:brightness(0.5);" alt="">
+  <div style="flex-wrap: wrap;" class=" mt-4 row mx-auto">
+    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12 mt-3 " style="width: 100%;height: 150px;border-radius: 10px;position: relative;">
+      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;" alt="">
       <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
         <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
         <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 37, 72);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">Youtube</p></div>
       </div>
     </div>
-    <div class="col-md-3 mt-3 " style="width: 80%;height: 150px;border-radius: 10px;position: relative;">
-      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;filter:brightness(0.5);" alt="">
+    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-4  mx-xs-auto mt-3 " style="width: 100%;height: 150px;border-radius: 10px;position: relative;">
+      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;" alt="">
       <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
         <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
         <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(37, 120, 245);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">Facebook</p></div>
       </div>
     </div>
-    <div class="col-md-3 mt-3 " style="width: 80%;height: 150px;border-radius: 10px;position: relative;">
-      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;filter:brightness(0.5);" alt="">
+    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-4 mt-3 " style="width: 100%;height: 150px;border-radius: 10px;position: relative;">
+      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;" alt="">
       <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
         <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
         <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 179, 37);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">ok.ru</p></div>

@@ -47,12 +47,13 @@
 
 .link-video-img {
   transition: 500ms all;
+  filter: brightness(0.5);
 }
 
 .link-video-img:hover {
   transition: 500ms all;
-  transform: scale(1.1);
-  filter: blur(1.2px);
+  transform: scale(1.08);
+  filter: brightness(1);
 }
 
 .custom-youtube-player {
