@@ -6,7 +6,7 @@
 - * get any video at any time and play it right into the application
 - * login and register using the form or using Google auth
 
-
+> give it a try : https://pocketplayer-c9181.web.app/
 
 
 ##### UI of the application  : 
