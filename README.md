@@ -7,7 +7,7 @@
 - * login and register using the form or using Google auth
 
 
-you can check it in : https://playpocket-4e84c.web.app/
+
 
 ##### UI of the application  : 
  - the home page
