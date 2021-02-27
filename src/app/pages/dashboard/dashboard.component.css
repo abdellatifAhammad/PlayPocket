@@ -69,11 +69,11 @@ video {
 } */
 
 .video-container {
-  background: black;
+  /* background: black; */
   z-index: -1;
   height: 400px;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .video-facebook {

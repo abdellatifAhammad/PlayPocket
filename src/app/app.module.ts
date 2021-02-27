@@ -17,6 +17,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
 import { AddLinkComponent } from './pages/add-link/add-link.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AddLinkComponent } from './pages/add-link/add-link.component';
     SidebarComponent,
     VideoplayerComponent,
     AddLinkComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

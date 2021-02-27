@@ -17,4 +17,8 @@ export class LinksService {
             .add(data)
   }
 
+  getLikns(user){
+    return this.firestore.collection("Links").ref.where('userEmail','==',user).get()
+  }
+
 }

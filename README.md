@@ -1,27 +1,43 @@
-# ThePocketPlayer
+### PlayPocket
+> have you ever think about something where you can keep your Videos from Youtube or ok.ru ( a Russian alternative to youtube), so for that I choose to make this is a simple project using angular with firebase backend to make this  possible
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+- features 
+- * you can add video with a custom thumbnail image
+- * get any video at any time and play it right into the application
+- * login and register using the form or using Google auth
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+you can check it in : https://playpocket-4e84c.web.app/
 
-## Code scaffolding
+##### UI of the application  : 
+ - the home page
+![](https://i.imgur.com/pkwgJlE.jpg)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- the login page
+![](https://i.imgur.com/5070pH0.png)
 
-## Build
+- the registeration page
+![](https://i.imgur.com/g7hcQ51.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- the dashboard page (first time empty)
+![](https://i.imgur.com/8H53HN5.png)
 
-## Running unit tests
+- add new link to your playpocket
+ ![](https://i.imgur.com/wAe87sK.png)
+ 
+ ![](https://i.imgur.com/Zho0Jbu.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- see it in the playpocket videos and play it
+ ![](https://i.imgur.com/GbzgIGP.png)
 
-## Running end-to-end tests
+### instalation and runing 
+```bash=
+    npm i
+    ng serve
+```
+> and here you go :wink: 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### there is a lot of coming features for this  project, stay tuned :fire: 
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+Created with :heart: By Abdellatif Ahammad

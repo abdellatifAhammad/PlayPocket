@@ -4,11 +4,11 @@
             <div class="col-md-6 pt-5 ">
                 <h1 class="landing-text primary-font text-white">Save any <span class="pink-color"> Video / Audio </span> ,<br> And play it when you want</h1>
                 <div class="row">
-                    <button type="button" class="btn btn-get-started text-white primary-font border-0 pink-glow radius  pink-bg" ><svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8%;">
+                    <button type="button" class="btn btn-get-started text-white primary-font border-0 pink-glow radius  pink-bg" [routerLink]="['/register']" routerLinkActive="router-link-active"  ><svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8%;">
                         <path d="M18.9464 9.64631L3.23214 0.298066C1.95536 -0.461114 0 0.275605 0 2.15334V20.8453C0 22.5299 1.81696 23.5451 3.23214 22.7006L18.9464 13.3569C20.3482 12.5258 20.3527 10.4774 18.9464 9.64631Z" fill="white"/>
                         </svg><span class="primary-font-semi-bold ">Get Started</span>
                     </button>
-                    <button type="button" class="btn btn-get-login text-white primary-font border-0  dark-glow radius half-dark-bg" >
+                    <button type="button" class="btn btn-get-login text-white primary-font border-0  dark-glow radius half-dark-bg" [routerLink]="['/login']" routerLinkActive="router-link-active"  >
                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" style="margin-right: 8%;" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.5 0C9.22552 0 7.00211 0.674463 5.11095 1.9381C3.21978 3.20173 1.7458 4.99779 0.87539 7.09914C0.00498273 9.20049 -0.222756 11.5128 0.220974 13.7435C0.664704 15.9743 1.75997 18.0234 3.36828 19.6317C4.97658 21.24 7.02568 22.3353 9.25646 22.779C11.4872 23.2228 13.7995 22.995 15.9009 22.1246C18.0022 21.2542 19.7983 19.7802 21.0619 17.8891C22.3255 15.9979 23 13.7745 23 11.5C23 8.45001 21.7884 5.52494 19.6317 3.36827C17.4751 1.2116 14.55 0 11.5 0ZM11.5431 12.7075C11.4217 12.7084 11.3013 12.6853 11.1889 12.6395C11.0764 12.5937 10.9741 12.5261 10.8879 12.4406C10.8017 12.3551 10.7333 12.2533 10.6867 12.1412C10.64 12.0291 10.6159 11.9089 10.6159 11.7875V4.77969C10.6159 4.53378 10.7136 4.29795 10.8875 4.12407C11.0614 3.95018 11.2972 3.8525 11.5431 3.8525C11.789 3.8525 12.0249 3.95018 12.1987 4.12407C12.3726 4.29795 12.4703 4.53378 12.4703 4.77969V11.7875C12.4703 11.9089 12.4463 12.0291 12.3996 12.1412C12.3529 12.2533 12.2845 12.3551 12.1983 12.4406C12.1121 12.5261 12.0099 12.5937 11.8974 12.6395C11.785 12.6853 11.6645 12.7084 11.5431 12.7075ZM11.5 18.5366C9.98617 18.5545 8.50624 18.0881 7.27618 17.2055C6.04611 16.3229 5.13031 15.0704 4.66241 13.6305C4.19451 12.1907 4.199 10.639 4.67524 9.20197C5.15148 7.76489 6.07453 6.51762 7.30969 5.64219C7.52483 5.48884 7.79164 5.42626 8.05252 5.46794C8.31341 5.50963 8.54743 5.65225 8.70407 5.865C8.78053 5.97006 8.83545 6.08922 8.86564 6.21561C8.89584 6.342 8.90073 6.47311 8.88001 6.60139C8.8593 6.72968 8.8134 6.85259 8.74496 6.96305C8.67653 7.07351 8.5869 7.16934 8.48125 7.245C7.7708 7.76676 7.20583 8.4618 6.84021 9.26386C6.47458 10.0659 6.3205 10.9483 6.39264 11.8268C6.46478 12.7053 6.76074 13.5507 7.2523 14.2823C7.74387 15.014 8.41465 15.6076 9.20071 16.0065C9.98676 16.4053 10.8619 16.5962 11.7426 16.5609C12.6234 16.5256 13.4804 16.2653 14.232 15.8048C14.9837 15.3443 15.6048 14.6989 16.0362 13.9302C16.4676 13.1616 16.695 12.2952 16.6966 11.4137C16.6941 10.6016 16.4971 9.80183 16.1219 9.08151C15.7468 8.36119 15.2044 7.74129 14.5403 7.27375C14.3358 7.11237 14.2036 6.87654 14.1726 6.61789C14.1416 6.35924 14.2144 6.09886 14.375 5.89375C14.5338 5.68325 14.7688 5.54348 15.0296 5.5045C15.2903 5.46553 15.556 5.53045 15.7694 5.68531C16.9916 6.57077 17.9 7.82263 18.3626 9.25926C18.8253 10.6959 18.8182 12.2426 18.3423 13.6749C17.8665 15.1072 16.9467 16.3507 15.7163 17.2249C14.486 18.099 13.0091 18.5585 11.5 18.5366Z" fill="white"/>
                             </svg>
@@ -55,13 +55,13 @@
         <hr width="10%" style="background-color: white;" class="mx-auto">
         <!-- <app-videoplayer></app-videoplayer> -->
         <div>
-            <div class="" style="" *ngIf="!displayVideo">
+            <div class="" *ngIf="!displayVideo">
                 <div class="play-btn" style="margin-top: 250px;position: absolute; z-index: 4;margin-left: 40%;background: tomato; width: 60px;height: 60px;text-align: center;justify-content: center;border-radius: 16px;" (click)="display()">
                     <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:16px;">
                         <path d="M18.9464 9.64631L3.23214 0.298066C1.95536 -0.461114 0 0.275605 0 2.15334V20.8453C0 22.5299 1.81696 23.5451 3.23214 22.7006L18.9464 13.3569C20.3482 12.5258 20.3527 10.4774 18.9464 9.64631Z" fill="white"/>
                     </svg>
                 </div>
-                <img  src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
+                <img  src="assets/img/theme/player.jpg" class="img-fluid custom-thumbnail" alt="">
             </div>
             <video *ngIf="displayVideo" controls="true" class="custom-player" >
                 <source src="assets/video/spring.mp4" type="video/mp4" />

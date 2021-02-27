@@ -2,39 +2,33 @@
   <div class="container-fluid">
     <div class="header-body">
       <!-- Card stats -->
+      <section  >
+        <div class="container" style="z-index: 3;">
+          <div style="position: relative;">
+            <div style="position: absolute;z-index: 4;">
+                <div class="container mt-md-2"  *ngIf="!displayVideo">
+                    <div class="play-btn" style="margin-top: 190px;position: absolute; z-index: 4;margin-left: 40%;background: tomato; width: 60px;height: 60px;text-align: center;justify-content: center;border-radius: 16px;" (click)="display()">
+                        <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:16px;">
+                            <path d="M18.9464 9.64631L3.23214 0.298066C1.95536 -0.461114 0 0.275605 0 2.15334V20.8453C0 22.5299 1.81696 23.5451 3.23214 22.7006L18.9464 13.3569C20.3482 12.5258 20.3527 10.4774 18.9464 9.64631Z" fill="white"/>
+                        </svg>
+                    </div>
+                     <img  src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
+                </div>
+                <video *ngIf="displayVideo&&localPlayer" [width]="innerWidth-300" controls="true" class="custom-player mt-md-2" >
+                    <source src="assets/video/spring.mp4" type="video/mp4" />
+                </video>
+                <div *ngIf="displayVideo&&(youtubePlayer||okPlayer)" class="video-container col-md-12 justify-content-center  mt-md-2">
+                  <iframe *ngIf="youtubePlayer" class="mx-auto" [width]="innerWidth" style=" border-radius: 10px; z-index:5;" height="400"  [src]="transform(currentVideo.link)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe *ngIf="okPlayer" class="mx-auto" [width]="innerWidth" height="400" [src]="transform(currentVideo.link)" frameborder="0" style="border-radius: 10px;z-index: 5;" allow="autoplay" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </div>
-<section  >
-  <div class="container" style="z-index: 3;">
-      <div style="position: absolute;top: 20px;">
-          <!-- <div class="container"  *ngIf="!displayVideo">
-              <div class="play-btn" style="margin-top: 190px;position: absolute; z-index: 4;margin-left: 40%;background: tomato; width: 60px;height: 60px;text-align: center;justify-content: center;border-radius: 16px;" (click)="display()">
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:16px;">
-                      <path d="M18.9464 9.64631L3.23214 0.298066C1.95536 -0.461114 0 0.275605 0 2.15334V20.8453C0 22.5299 1.81696 23.5451 3.23214 22.7006L18.9464 13.3569C20.3482 12.5258 20.3527 10.4774 18.9464 9.64631Z" fill="white"/>
-                  </svg>
-              </div>
-             https://www.facebook.com/PajaroSantaLeone/videos/2837922789858627 
-               <img  src="https://graph.facebook.com/v9.0/2837922789858627/thumbnails" class="img-fluid custom-thumbnail" alt=""> 
-               <img  src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="img-fluid custom-thumbnail" alt="">
-          </div> -->
-          <!-- <video *ngIf="displayVideo" controls="true" class="custom-player" >
-              <source src="assets/video/spring.mp4" type="video/mp4" />
-          </video> -->
-          <div  class="video-container">
-            <!-- <iframe 
-              src="https://www.facebook.com/plugins/video.php?href=https://fb.watch/3K8NrOBBYx&show_text=0&height=400"
-               height="400"
-              class="video-facebook"
-              style="border:none ;border-radius: 10px;"
-              scrolling="no" frameborder="0" allowTransparency="false" allowFullScreen="true"
-            ></iframe> -->
-            <!-- <iframe [width]="innerWidth-300" style=" border-radius: 10px;" height="400"  src="https://www.youtube.com/embed/WhWc3b3KhnY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-            <iframe [width]="innerWidth-300" height="400" src="//ok.ru/videoembed/316232310349" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-          </div> 
-      </div>
-  </div>
-</section>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -47,12 +41,18 @@
               </button>
           </div>
       <div class="modal-body">
-        <div class="alert alert-danger  fade show pink-bg" role="alert">
+        <div *ngIf="error"  class="alert alert-danger  fade show pink-bg" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <strong class="text-white primary-font-semi-bold">You have to complete those inputs</strong> 
+          <strong class="text-white primary-font-semi-bold">Error: Incomplet Informations</strong> 
         </div>
+        <div *ngIf="success"  class="alert alert-success  fade show " role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong class=" primary-font-semi-bold text-success">Success: Your link Saved successfully</strong> 
+        </div> 
         <script>
           $(".alert").alert();
         </script>
@@ -74,13 +74,13 @@
                 <!-- <option value="local">Local file</option> -->
               </select>
           </div>
-          <div class="form-group">
-            <label class="primary-font" for="">Video thumbnail Image</label>
+          <div class="custom-file">
+            <label class="primary-font custom-file-label" for="">Video thumbnail Image</label>
             <input type="file" 
             #linkPhoto
             (change)="onFileSelected($event)"
             name="image"
-            autocomplete="off" class="form-control custom-file-input" name="link-title" id="link" aria-describedby="helpId"  placeholder="pick your thumbnail Image" #link required>
+            autocomplete="off" class="form-control custom-file-input " name="link-title" id="link" aria-describedby="helpId"  placeholder="pick your thumbnail Image" #link required>
           </div>
         </div>
       </div>
@@ -105,26 +105,23 @@
   </div>
   <div class="container">
   <div style="flex-wrap: wrap;" class=" mt-4 row mx-auto">
-    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12 mt-3 " style="width: 100%;height: 150px;border-radius: 10px;position: relative;">
-      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;" alt="">
+    <div *ngFor="let link of userLinks" class="col-md-6 col-lg-4 col-sm-6 col-xs-12 mt-3 " style="width: 100%;height: 150px;border-radius: 10px;position: relative;" (click)="changePlayer(link)">
+      <img [src]="link.data.thumb" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;" alt="">
       <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
-        <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
-        <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 37, 72);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">Youtube</p></div>
+        <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">{{link.data.title}}</h3>
+        <div *ngIf="link.data.type==='youtube'"  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 37, 72);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">Youtube</p></div>
+        <div *ngIf="link.data.type==='ok'" class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 179, 37);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">ok.ru</p></div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-4  mx-xs-auto mt-3 " style="width: 100%;height: 150px;border-radius: 10px;position: relative;">
-      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;" alt="">
-      <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
-        <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
-        <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(37, 120, 245);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">Facebook</p></div>
+  </div>
+  <div *ngIf="userLinks.length===0">
+    <div class="container" >
+      <div class="col-md-12" >
+      <div class="mt-4">
+      <img src="assets/img/theme/old-computer.png" style="height: 140px;"  class="img-fluid mx-auto d-block" alt="">
+      <h4 class="text-white primary-font-semi-bold text-center mt-5">No Links found try to create your First one !</h4>
       </div>
     </div>
-    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-4 mt-3 " style="width: 100%;height: 150px;border-radius: 10px;position: relative;">
-      <img src="https://img.youtube.com/vi/WhWc3b3KhnY/hq720.jpg" class="link-video-img"  style="width: 100%;height: 150px;border-radius: 10px;overflow: hidden;" alt="">
-      <div style="width: 90%;height: 80px;position: absolute;bottom:0px;">
-        <h3 style="font-size: 1.5em; ;" class="text-white primary-font pl-2">The Spring Movie</h3>
-        <div  class="btn text-white primary-font pl-2 ml-2" style="background-color: rgb(245, 179, 37);width: 70px;height:20px ;border-radius: 10px;"><p style="font-size: 12px;text-align: center;line-height: 8px;">ok.ru</p></div>
-      </div>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from "@angular/fire/storage";
 import { finalize } from 'rxjs/operators';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -20,21 +21,57 @@ export class DashboardComponent implements OnInit {
   public downloadURL: Observable<string>;
   public fb; 
   public loading:boolean=false;
+  public success:boolean=false;
+  public userLinks:Array<any>=[];
+  public youtubePlayer:boolean=false;
+  public okPlayer:boolean=false;
+  public localPlayer:boolean=true;
+  public currentVideo:any;
 
-  constructor(private linksService:LinksService,private authService:AuthService,private storage: AngularFireStorage) { }
+  constructor(private linksService:LinksService,private authService:AuthService,private storage: AngularFireStorage,private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.innerWidth = window.innerWidth;
+    this.getLinks();
+    if(window.innerWidth<700){
+      this.innerWidth = window.innerWidth-170;
+    }else if(window.innerWidth<560){
+      this.innerWidth = window.innerWidth-190;
+    }else{
+      this.innerWidth = window.innerWidth -370;
+    }
+    
+    // this.currentVideo.link =""
+     
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.innerWidth = window.innerWidth;
+    this.innerWidth = window.innerWidth-300;
     console.log(this.innerWidth);
+    
+    if(window.innerWidth<700){
+      this.innerWidth = window.innerWidth-170;
+    }else if(window.innerWidth<560){
+      this.innerWidth = window.innerWidth-190;
+    }else{
+      this.innerWidth = window.innerWidth -370;
+    }
   }
   display(){
     this.displayVideo=!this.displayVideo;
   }
-
+  async getLinks(){
+    var list =[]
+      console.log(JSON.parse(localStorage.getItem('user')).email);
+      await this.linksService.getLikns(JSON.parse(localStorage.getItem('user')).email).then(res=>{
+        res.docs.forEach(ele=>{
+          list.push({id:ele.id,data:ele.data()})
+        })
+      }).then(result=>{
+        this.userLinks = list;
+        console.log(list);
+        
+      })
+  }
   createLink(title :String ,link:String,type:String){
     this.loading = true;
     if(title&&link){
@@ -63,6 +100,8 @@ export class DashboardComponent implements OnInit {
                   this.fb = url;
                 }
                  this.linksService.createNewLink({...data,thumb:this.fb}).then(res=>{
+                  this.getLinks();
+                  this.success=true;
                    this.loading=false;
                  })
               });
@@ -86,6 +125,33 @@ export class DashboardComponent implements OnInit {
     this.thumb = event.target.files[0];
     const filePath = `thumb/${n}`;
    console.log(this.thumb);
+  }
+
+  changePlayer(video){
+    console.log("https://www.youtube.com/embed/"+video.data.link.split('?v=')[1]);
+    
+    if(video.data.type==="ok"){
+      this.currentVideo={link:"//ok.ru/videoembed/"+video.data.link.split('video/')[1],...video};
+      this.displayVideo=true;
+      this.youtubePlayer=false;
+      this.localPlayer=false;
+      this.okPlayer=true;
+    }else if(video.data.type==="youtube"){
+      this.currentVideo={link:"https://www.youtube.com/embed/"+video.data.link.split('?v=')[1],...video};
+      this.displayVideo=true;
+      this.localPlayer=false;
+      this.okPlayer=false;
+      this.youtubePlayer=true;
+    }else{
+      this.localPlayer=true;
+      this.okPlayer=false;
+      this.youtubePlayer=false;
+      this.displayVideo=true;
+    }
+  }
+
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
    
 
